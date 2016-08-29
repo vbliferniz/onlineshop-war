@@ -5,8 +5,18 @@
 			xsi:schemaLocation="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" 
 			version="3.1">
   
-  <context-param>
-    <param-name>driver</param-name>
-    <param-value>oracle.jdbc.OracleDriver</param-value>
-  </context-param>
+  <servlet>
+	  <servlet-name>JdbcServlet</servlet-name>
+	  <servlet-class>
+	  	de.java2enterprise.onlineshop.JdbcServlet
+	  </servlet-class>
+	  <init-param>
+	  	<param-name>jdbc_properties</param-name>
+	  	<param-value>/WEB-INF/jdbc.properties</param-value>
+	  </init-param>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>JdbcServlet</servlet-name>
+  	<url-pattern>/db_settings</url-pattern>
+  </servlet-mapping>
 </web-app>
